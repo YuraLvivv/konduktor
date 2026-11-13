@@ -158,6 +158,65 @@
                 </div>
             </div>
 
+            <!-- ЛОТ 3: Кондуктор регульований під шкант, конфірмат і мініфікс -->
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-6 p-5 md:p-8">
+                <div>
+                    <div class="aspect-square bg-white rounded-xl overflow-hidden mb-3 border border-gray-200 flex items-center justify-center p-2">
+                        <img id="mainImg3" src="IMG_20240301_163210.jpg" alt="Кондуктор регульований" class="w-full h-full object-contain">
+                    </div>
+                    <div class="grid grid-cols-5 gap-1.5">
+                        <img src="IMG_20240301_163210.jpg" onclick="changeImage('mainImg3', this)" class="thumb-active h-16 w-full object-contain bg-white p-1 rounded-lg cursor-pointer opacity-70 hover:opacity-100 transition border">
+                        <img src="IMG_20240301_163142.jpg" onclick="changeImage('mainImg3', this)" class="h-16 w-full object-contain bg-white p-1 rounded-lg cursor-pointer opacity-70 hover:opacity-100 transition border">
+                        <img src="IMG_20240301_163036.jpg" onclick="changeImage('mainImg3', this)" class="h-16 w-full object-contain bg-white p-1 rounded-lg cursor-pointer opacity-70 hover:opacity-100 transition border">
+                        <img src="IMG_20240301_163010.jpg" onclick="changeImage('mainImg3', this)" class="h-16 w-full object-contain bg-white p-1 rounded-lg cursor-pointer opacity-70 hover:opacity-100 transition border">
+                        <img src="IMG_20240223_085920.jpg" onclick="changeImage('mainImg3', this)" class="h-16 w-full object-contain bg-white p-1 rounded-lg cursor-pointer opacity-70 hover:opacity-100 transition border">
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-1 rounded-full mb-2">
+                            ✓ Регульована платформа • Преміум клас
+                        </span>
+                        <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-1">
+                            Кондуктор регульований під шкант, конфірмат і мініфікс
+                        </h2>
+                        <div class="text-3xl font-extrabold text-red-600 mb-3">575 грн[span_10](start_span)[span_10](end_span)</div>
+
+                        <p class="text-gray-600 text-sm mb-3 leading-relaxed">
+                            Універсальний кондуктор для ДСП 16 і 18 мм з <strong>регульованою платформою</strong>[span_11](start_span)[span_11](end_span). Призначений для встановлення ексцентрикової стяжки Rafix та Minifix із двома підшипниками в отворі для мінімізації люфту[span_12](start_span)[span_12](end_span). Оснащений висувними упорами і прижимами, діаметр чашки підшипника — 8 мм[span_13](start_span)[span_13](end_span).
+                        </p>
+
+                        <ul class="text-sm text-gray-700 space-y-1 mb-4">
+                            <li>🔹 <strong>Система 32:</strong> крайні отвори 37 мм, наступні з кроком 32 мм[span_14](start_span)[span_14](end_span)</li>
+                            <li>🔹 <strong>Рафікс:</strong> 9,5 мм[span_15](start_span)[span_15](end_span)</li>
+                            <li>🔹 <strong>Мініфікс:</strong> 34 і 42 мм[span_16](start_span)[span_16](end_span)</li>
+                            <li>🔹 <strong>Шкант:</strong> підшипник 8 мм[span_17](start_span)[span_17](end_span)</li>
+                            <li>🔹 <strong>Конфірмат:</strong> підшипники 5 мм[span_18](start_span)[span_18](end_span)</li>
+                        </ul>
+
+                        <div class="bg-gray-50 p-3.5 rounded-xl border border-gray-200 space-y-3 mb-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Оберіть товщину ДСП:</label>
+                                <select id="dsp3" class="w-full border border-gray-300 rounded-lg p-2 text-sm bg-white outline-none">
+                                    <option value="ДСП 18 мм">ДСП 18 мм</option>
+                                    <option value="ДСП 16 мм">ДСП 16 мм</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        <button onclick="addToCart('Кондуктор регульований (Rafix/Minifix)', 575, document.getElementById('dsp3').value, false)" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-4 rounded-xl text-sm transition">
+                            ➕ Додати в кошик
+                        </button>
+                        <button onclick="addToCart('Кондуктор регульований (Rafix/Minifix)', 575, document.getElementById('dsp3').value, true)" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-xl text-sm shadow transition">
+                            ⚡ Замовити зараз
+                        </button>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <!-- КОШИК ТА ОФОРМЛЕННЯ ЗАМОВЛЕННЯ -->
@@ -178,6 +237,9 @@
                         </button>
                         <button type="button" onclick="addToCart('Кондуктор Т-подібний (5мм)', 350, 'ДСП 18 мм', false)" class="text-xs bg-white hover:bg-gray-100 text-gray-800 font-medium px-3 py-1.5 rounded-lg border border-gray-300 transition">
                             + Т-подібний (350 грн)
+                        </button>
+                        <button type="button" onclick="addToCart('Кондуктор регульований', 575, 'ДСП 18 мм', false)" class="text-xs bg-white hover:bg-gray-100 text-gray-800 font-medium px-3 py-1.5 rounded-lg border border-gray-300 transition">
+                            + Регульований (575 грн)
                         </button>
                     </div>
                     <div class="text-lg font-extrabold text-red-600">
