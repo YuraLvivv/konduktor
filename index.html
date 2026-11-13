@@ -1,168 +1,237 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кондуктор меблевий "Універсальний" — Замовлення</title>
+    <title>Каталог меблевих кондукторів — Замовлення</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        .thumb-active { border: 2px solid #dc2626; opacity: 1; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; scroll-behavior: smooth; }
+        .thumb-active { border: 2px solid #dc2626; opacity: 1 !important; }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-    <!-- Шапка -->
+    <!-- Шапка сайту -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
+        <div class="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <span class="bg-red-600 text-white font-bold px-2.5 py-1 rounded text-sm">PRO</span>
                 <span class="font-bold text-lg tracking-tight">Меблеві Кондуктори</span>
             </div>
-            <a href="#order-form" class="bg-red-600 hover:bg-red-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition">
-                Замовити
+            <a href="#order-section" class="bg-red-600 hover:bg-red-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition flex items-center space-x-1">
+                <span>🛒 Кошик</span>
+                <span id="headerCartCount" class="bg-white text-red-600 font-bold rounded-full px-2 py-0.5 text-xs ml-1">0</span>
             </a>
         </div>
     </header>
 
-    <!-- Основний блок товару -->
-    <main class="max-w-4xl mx-auto px-4 py-6">
-        <div class="bg-white rounded-2xl shadow-md overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-6 p-5 md:p-8">
-            
-            <!-- Галерея фото -->
-            <div>
-                <div class="aspect-square bg-gray-50 rounded-xl overflow-hidden mb-3 border border-gray-200 flex items-center justify-center">
-                    <img id="mainImage" src="photo1.jpg" alt="Кондуктор універсальний" class="w-full h-full object-contain">
-                </div>
-                <div class="grid grid-cols-4 gap-2">
-                    <img src="photo1.png" onclick="changeImage(this.src, this)" class="thumb-active h-20 w-full object-cover rounded-lg cursor-pointer opacity-75 hover:opacity-100 transition">
-                    <img src="photo2.jpg" onclick="changeImage(this.src, this)" class="h-20 w-full object-contain rounded-lg cursor-pointer opacity-75 hover:opacity-100 transition border">
-                    <img src="photo3.jpg" onclick="changeImage(this.src, this)" class="h-20 w-full object-contain rounded-lg cursor-pointer opacity-75 hover:opacity-100 transition border">
-                    <img src="photo4.jpg" onclick="changeImage(this.src, this)" class="h-20 w-full object-contain rounded-lg cursor-pointer opacity-75 hover:opacity-100 transition border">
-                </div>
-            </div>
-
-            <!-- Опис і Характеристики -->
-            <div class="flex flex-col justify-between">
-                <div>
-                    <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-1 rounded-full mb-2">
-                        ✓ В наявності • Власне виробництво
-                    </span>
-                    <h1 class="text-2xl font-bold text-gray-900 mb-2">
-                        Кондуктор меблевий «Універсальний» (ДСП 16 і 18 мм)
-                    </h1>
-                    <div class="text-3xl font-extrabold text-red-600 mb-4">
-                        475 грн
-                    </div>
-
-                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">
-                        Інструмент, який зекономить ваш час та пришвидшить процес виготовлення корпусних меблів. Створений за <strong>системою 32</strong> (крайні отвори — 37 мм, наступні з кроком 32 мм). Оснащений планками для фіксації на ДСП та висувними опорами.
-                    </p>
-
-                    <h3 class="font-semibold text-gray-900 text-sm mb-2">Призначений для свердління і розмітки під:</h3>
-                    <ul class="text-sm text-gray-700 space-y-1.5 mb-4">
-                        <li class="flex items-center">🔹 <span class="ml-2"><strong>Рафікс:</strong> 9,5 мм</span></li>
-                        <li class="flex items-center">🔹 <span class="ml-2"><strong>Мініфікс:</strong> 34 і 42 мм</span></li>
-                        <li class="flex items-center">🔹 <span class="ml-2"><strong>Шкант:</strong> підшипник 8 мм</span></li>
-                        <li class="flex items-center">🔹 <span class="ml-2"><strong>Конфірмат:</strong> підшипники 5 мм</span></li>
-                        <li class="flex items-center">🔹 <span class="ml-2"><strong>Меблеві ручки:</strong> 96 і 128 мм (з кроком 10 мм)</span></li>
-                        <li class="flex items-center">🔹 <span class="ml-2"><strong>Меблеві петлі:</strong> Ø 26 і 35 мм (маленька і стандартна)</span></li>
-                    </ul>
-
-                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 text-xs text-gray-600 mb-4">
-                        📐 <strong>Габарити шаблону:</strong> 137 × 100 × 48 мм (компактний для транспортування).<br>
-                        ⚙️ <strong>Індивідуальне налаштування:</strong> Отвори і діаметр підшипника на шаблоні можна змінити під ваші потреби при замовленні!
-                    </div>
-                </div>
-
-                <a href="#order-form" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3.5 px-6 rounded-xl text-center shadow-lg transition block">
-                    Перейти до оформлення ↓
-                </a>
-            </div>
+    <main class="max-w-5xl mx-auto px-4 py-6 space-y-8">
+        
+        <div class="text-center max-w-2xl mx-auto">
+            <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900">Інструменти для точного свердління та збирання меблів</h1>
+            <p class="text-sm text-gray-600 mt-2">Власне виробництво • Точна геометрія • Відправка Новою Поштою та Укрпоштою</p>
         </div>
 
-        <!-- Форма замовлення -->
-        <div id="order-form" class="bg-white rounded-2xl shadow-md p-6 md:p-8 mt-6">
-            <h2 class="text-xl font-bold text-gray-900 mb-1">Оформлення замовлення</h2>
-            <p class="text-sm text-gray-500 mb-6">Заповніть реквізити для відправки, і ми швидко підготуємо ваше замовлення</p>
+        <!-- КАТАЛОГ ТОВАРІВ -->
+        <div class="space-y-8">
 
-            <form id="tgForm" class="space-y-4">
-                
-                <!-- Параметри кондуктора -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-red-50 p-4 rounded-xl border border-red-100">
-                    <div>
-                        <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Товщина ДСП *</label>
-                        <select id="dsp" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm bg-white focus:ring-2 focus:ring-red-500 outline-none">
-                            <option value="18 мм">ДСП 18 мм</option>
-                            <option value="16 мм">ДСП 16 мм</option>
-                            <option value="16 та 18 мм (уточнити)">Потрібна консультація (16/18 мм)</option>
-                        </select>
+            <!-- ЛОТ 1: Кондуктор Універсальний -->
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-6 p-5 md:p-8">
+                <div>
+                    <div class="aspect-square bg-white rounded-xl overflow-hidden mb-3 border border-gray-200 flex items-center justify-center p-2">
+                        <img id="mainImg1" src="photo1.png" alt="Кондуктор універсальний" class="w-full h-full object-contain">
                     </div>
-
-                    <div>
-                        <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Підшипники та отвори</label>
-                        <select id="bearings" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm bg-white focus:ring-2 focus:ring-red-500 outline-none">
-                            <option value="Стандарт (Шкант 8мм / Конфірмат 5мм)">Стандарт (8 мм + 5 мм)</option>
-                            <option value="Індивідуальні (вказано в коментарі)">Змінити під мої потреби (вкажу нижче)</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Кількість (шт.) *</label>
-                        <div class="flex items-center">
-                            <input type="number" id="qty" value="1" min="1" max="50" onchange="updateTotal()" oninput="updateTotal()" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm bg-white focus:ring-2 focus:ring-red-500 outline-none font-bold">
-                            <span id="totalPrice" class="ml-3 font-extrabold text-red-600 whitespace-nowrap text-lg">475 грн</span>
-                        </div>
+                    <div class="grid grid-cols-4 gap-2">
+                        <img src="photo1.png" onclick="changeImage('mainImg1', this)" class="thumb-active h-20 w-full object-contain bg-white p-1 rounded-lg cursor-pointer opacity-70 hover:opacity-100 transition border">
+                        <img src="photo2.jpg" onclick="changeImage('mainImg1', this)" class="h-20 w-full object-contain bg-white p-1 rounded-lg cursor-pointer opacity-70 hover:opacity-100 transition border">
+                        <img src="photo3.jpg" onclick="changeImage('mainImg1', this)" class="h-20 w-full object-contain bg-white p-1 rounded-lg cursor-pointer opacity-70 hover:opacity-100 transition border">
+                        <img src="photo4.jpg" onclick="changeImage('mainImg1', this)" class="h-20 w-full object-contain bg-white p-1 rounded-lg cursor-pointer opacity-70 hover:opacity-100 transition border">
                     </div>
                 </div>
 
-                <!-- Контактні дані -->
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-1 rounded-full mb-2">
+                            ✓ Хіт продажів • В наявності
+                        </span>
+                        <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-1">
+                            Кондуктор меблевий «Універсальний» (ДСП 16 і 18 мм)
+                        </h2>
+                        <div class="text-3xl font-extrabold text-red-600 mb-3">475 грн</div>
+
+                        <p class="text-gray-600 text-sm mb-3 leading-relaxed">
+                            Створений за <strong>системою 32</strong> (крайні отвори — 37 мм, наступні з кроком 32 мм). Є планки для фіксації на ДСП і висувні опори. Габарити: 137×100×48 мм.
+                        </p>
+
+                        <ul class="text-sm text-gray-700 space-y-1 mb-4">
+                            <li>🔹 <strong>Рафікс:</strong> 9,5 мм | <strong>Мініфікс:</strong> 34 і 42 мм</li>
+                            <li>🔹 <strong>Шкант:</strong> підшипник 8 мм | <strong>Конфірмат:</strong> підшипники 5 мм</li>
+                            <li>🔹 <strong>Меблеві ручки:</strong> 96 і 128 мм (крок 10 мм)</li>
+                            <li>🔹 <strong>Меблеві петлі:</strong> Ø 26 і 35 мм (маленька і стандартна)</li>
+                        </ul>
+
+                        <div class="bg-gray-50 p-3.5 rounded-xl border border-gray-200 space-y-3 mb-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Оберіть товщину ДСП:</label>
+                                <select id="dsp1" class="w-full border border-gray-300 rounded-lg p-2 text-sm bg-white outline-none">
+                                    <option value="ДСП 18 мм">ДСП 18 мм</option>
+                                    <option value="ДСП 16 мм">ДСП 16 мм</option>
+                                    <option value="16 та 18 мм (уточнити)">Потрібна консультація (16/18 мм)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Комплектація підшипників:</label>
+                                <select id="opt1" class="w-full border border-gray-300 rounded-lg p-2 text-sm bg-white outline-none">
+                                    <option value="Стандарт (8мм + 5мм)">Стандарт (Шкант 8 мм + Конфірмат 5 мм)</option>
+                                    <option value="Індивідуальний розмір (вказано в коментарі)">Змінити отвори/підшипник під замовлення</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        <button onclick="addToCart('Кондуктор «Універсальний»', 475, document.getElementById('dsp1').value + ', ' + document.getElementById('opt1').value, false)" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-4 rounded-xl text-sm transition">
+                            ➕ Додати в кошик
+                        </button>
+                        <button onclick="addToCart('Кондуктор «Універсальний»', 475, document.getElementById('dsp1').value + ', ' + document.getElementById('opt1').value, true)" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-xl text-sm shadow transition">
+                            ⚡ Замовити зараз
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ЛОТ 2: Кондуктор Т-подібний -->
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-6 p-5 md:p-8">
+                <div>
+                    <div class="aspect-square bg-white rounded-xl overflow-hidden mb-3 border border-gray-200 flex items-center justify-center p-2">
+                        <img id="mainImg2" src="IMG_20240312_092626.jpg" alt="Кондуктор Т-подібний" class="w-full h-full object-contain">
+                    </div>
+                    <div class="grid grid-cols-4 gap-2">
+                        <img src="IMG_20240312_092626.jpg" onclick="changeImage('mainImg2', this)" class="thumb-active h-20 w-full object-contain bg-white p-1 rounded-lg cursor-pointer opacity-70 hover:opacity-100 transition border">
+                        <img src="IMG_20240312_092607.jpg" onclick="changeImage('mainImg2', this)" class="h-20 w-full object-contain bg-white p-1 rounded-lg cursor-pointer opacity-70 hover:opacity-100 transition border">
+                        <img src="IMG_20240312_092545.jpg" onclick="changeImage('mainImg2', this)" class="h-20 w-full object-contain bg-white p-1 rounded-lg cursor-pointer opacity-70 hover:opacity-100 transition border">
+                        <img src="IMG_20240312_092537.jpg" onclick="changeImage('mainImg2', this)" class="h-20 w-full object-contain bg-white p-1 rounded-lg cursor-pointer opacity-70 hover:opacity-100 transition border">
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-1 rounded-full mb-2">
+                            ✓ В наявності • Швидке позиціонування
+                        </span>
+                        <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-1">
+                            Кондуктор Т-подібний під конфірмат та шкант
+                        </h2>
+                        <div class="text-3xl font-extrabold text-red-600 mb-3">350 грн</div>
+
+                        <p class="text-gray-600 text-sm mb-3 leading-relaxed">
+                            Зручний Т-подібний шаблон для швидкого та точного свердління у торець і площину ДСП без попередньої розмітки. Надійно фіксується на плиті та забезпечує ідеальний прямий кут свердління.
+                        </p>
+
+                        <ul class="text-sm text-gray-700 space-y-1 mb-4">
+                            <li>🔹 <strong>Призначення:</strong> Свердління під конфірмат (отвори під свердло 5 мм) та шкант</li>
+                            <li>🔹 <strong>Розмітка відступів:</strong> 20 мм, 50 мм, 80 мм</li>
+                            <li>🔹 <strong>Товщина плити:</strong> Під ДСП 16 мм або 18 мм (вкажіть при замовленні)</li>
+                            <li>🔹 <strong>Конструкція:</strong> Зносостійкі металеві підшипники та міцний корпус</li>
+                        </ul>
+
+                        <div class="bg-gray-50 p-3.5 rounded-xl border border-gray-200 space-y-3 mb-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Оберіть товщину ДСП (обов'язково):</label>
+                                <select id="dsp2" class="w-full border border-gray-300 rounded-lg p-2 text-sm bg-white outline-none">
+                                    <option value="ДСП 18 мм">ДСП 18 мм</option>
+                                    <option value="ДСП 16 мм">ДСП 16 мм</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        <button onclick="addToCart('Кондуктор Т-подібний (під конфірмат 5мм)', 350, document.getElementById('dsp2').value, false)" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-4 rounded-xl text-sm transition">
+                            ➕ Додати в кошик
+                        </button>
+                        <button onclick="addToCart('Кондуктор Т-подібний (під конфірмат 5мм)', 350, document.getElementById('dsp2').value, true)" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-xl text-sm shadow transition">
+                            ⚡ Замовити зараз
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- КОШИК ТА ОФОРМЛЕННЯ ЗАМОВЛЕННЯ -->
+        <div id="order-section" class="bg-white rounded-2xl shadow-md p-6 md:p-8">
+            <h2 class="text-xl font-bold text-gray-900 mb-1">Оформлення замовлення</h2>
+            <p class="text-sm text-gray-500 mb-5">Перевірте обрані позиції та заповніть реквізити для доставки</p>
+
+            <div class="bg-red-50 rounded-xl p-4 border border-red-100 mb-6">
+                <h3 class="text-xs font-bold uppercase text-gray-700 mb-3">Обрані товари:</h3>
+                <div id="cartItemsList" class="space-y-2 text-sm text-gray-800">
+                    <p class="text-gray-500 italic">Кошик порожній. Натисніть «Додати в кошик» або «Замовити зараз» біля потрібного кондуктора вище, або оберіть товар прямо тут:</p>
+                </div>
+
+                <div class="mt-3 pt-3 border-t border-red-200 flex flex-wrap gap-2 items-center justify-between">
+                    <div class="flex flex-wrap gap-2">
+                        <button type="button" onclick="addToCart('Кондуктор «Універсальний»', 475, 'ДСП 18 мм, Стандарт', false)" class="text-xs bg-white hover:bg-gray-100 text-gray-800 font-medium px-3 py-1.5 rounded-lg border border-gray-300 transition">
+                            + Універсальний (475 грн)
+                        </button>
+                        <button type="button" onclick="addToCart('Кондуктор Т-подібний (5мм)', 350, 'ДСП 18 мм', false)" class="text-xs bg-white hover:bg-gray-100 text-gray-800 font-medium px-3 py-1.5 rounded-lg border border-gray-300 transition">
+                            + Т-подібний (350 грн)
+                        </button>
+                    </div>
+                    <div class="text-lg font-extrabold text-red-600">
+                        Разом: <span id="cartTotalSum">0</span> грн
+                    </div>
+                </div>
+            </div>
+
+            <form id="tgForm" class="space-y-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Прізвище та Ім'я отримувача *</label>
-                        <input type="text" id="name" required placeholder="Наприклад: Коваленко Олександр" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-red-500 outline-none">
+                        <input type="text" id="name" required placeholder="Наприклад: Коваленко Олександр" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm outline-none focus:border-red-500">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Номер телефону *</label>
-                        <input type="tel" id="phone" required placeholder="+380 (XX) XXX-XX-XX" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-red-500 outline-none">
+                        <input type="tel" id="phone" required placeholder="+380 (XX) XXX-XX-XX" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm outline-none focus:border-red-500">
                     </div>
                 </div>
 
-                <!-- Доставка та Оплата -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Служба доставки *</label>
-                        <select id="delivery" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm bg-white focus:ring-2 focus:ring-red-500 outline-none">
+                        <select id="delivery" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm bg-white outline-none">
                             <option value="Нова Пошта">Нова Пошта</option>
                             <option value="Укрпошта">Укрпошта</option>
                         </select>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Місто / Населений пункт *</label>
-                        <input type="text" id="city" required placeholder="Наприклад: м. Львів" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-red-500 outline-none">
+                        <input type="text" id="city" required placeholder="Наприклад: м. Львів" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm outline-none focus:border-red-500">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Номер відділення / поштомату *</label>
-                        <input type="text" id="branch" required placeholder="Відділення №5 (або індекс)" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-red-500 outline-none">
+                        <input type="text" id="branch" required placeholder="Відділення №5 (або індекс)" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm outline-none focus:border-red-500">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Спосіб оплати *</label>
-                        <select id="payment" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm bg-white focus:ring-2 focus:ring-red-500 outline-none">
+                        <select id="payment" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm bg-white outline-none">
                             <option value="Післяплата (при отриманні)">Оплата при отриманні (накладений платіж)</option>
                             <option value="Оплата на картку">Переказ на картку (скиньте реквізити)</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Коментар або індивідуальні розміри підшипників</label>
-                        <input type="text" id="comment" placeholder="Якщо потрібно змінити отвори або діаметр підшипника — напишіть тут" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-red-500 outline-none">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Коментар або уточнення (ДСП 16/18 мм, підшипники)</label>
+                        <input type="text" id="comment" placeholder="Ваші побажання або питання до замовлення" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm outline-none focus:border-red-500">
                     </div>
                 </div>
 
                 <button type="submit" id="submitBtn" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-xl shadow-md transition text-base mt-2">
-                    ✅ Підтвердити замовлення
+                    ✅ Підтвердити та відправити замовлення
                 </button>
 
                 <div id="statusMessage" class="hidden p-4 rounded-xl text-center font-medium text-sm"></div>
@@ -171,42 +240,107 @@
     </main>
 
     <footer class="text-center text-xs text-gray-400 py-6">
-        © 2026 Виготовлення меблевих кондукторів та виробів із пластику. Всі права захищено.
+        © 2026 Виготовлення меблевих кондукторів та виробів із пластику. Виникнуть питання — пишіть!
     </footer>
 
     <script>
         // ==========================================
-        // НАЛАШТУВАННЯ TELEGRAM БОТА (ВСТАВТЕ СВОЇ ДАНІ)
+        // ВСТАВТЕ ВАШІ ДАНІ TELEGRAM БОТА ТУТ:
         // ==========================================
         const BOT_TOKEN = "9128470729:AAHwmrjVB0iLrBFXvebQeKHwH8ZFVX7EDnI"; 
         const CHAT_ID = "607986890";
-        const PRICE = 475;
 
-        function changeImage(src, element) {
-            document.getElementById('mainImage').src = src;
-            document.querySelectorAll('.thumb-active').forEach(el => el.classList.remove('thumb-active'));
-            element.classList.add('thumb-active');
+        let cart = [];
+
+        function changeImage(mainImgId, thumbElement) {
+            document.getElementById(mainImgId).src = thumbElement.src;
+            const parentGrid = thumbElement.parentElement;
+            parentGrid.querySelectorAll('img').forEach(img => img.classList.remove('thumb-active'));
+            thumbElement.classList.add('thumb-active');
         }
 
-        function updateTotal() {
-            const qty = parseInt(document.getElementById('qty').value) || 1;
-            document.getElementById('totalPrice').innerText = (qty * PRICE) + ' грн';
+        function addToCart(title, price, options, scrollToForm) {
+            const existing = cart.find(item => item.title === title && item.options === options);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ title, price, options, qty: 1 });
+            }
+            renderCart();
+            if (scrollToForm) {
+                document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function changeQty(index, delta) {
+            cart[index].qty += delta;
+            if (cart[index].qty <= 0) {
+                cart.splice(index, 1);
+            }
+            renderCart();
+        }
+
+        function renderCart() {
+            const list = document.getElementById('cartItemsList');
+            const totalEl = document.getElementById('cartTotalSum');
+            const headerCount = document.getElementById('headerCartCount');
+
+            if (cart.length === 0) {
+                list.innerHTML = `<p class="text-gray-500 italic">Кошик порожній. Натисніть «Додати в кошик» або «Замовити зараз» біля потрібного кондуктора вище.</p>`;
+                totalEl.innerText = "0";
+                headerCount.innerText = "0";
+                return;
+            }
+
+            let total = 0;
+            let count = 0;
+            list.innerHTML = cart.map((item, idx) => {
+                const sum = item.price * item.qty;
+                total += sum;
+                count += item.qty;
+                return `
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between bg-white p-3 rounded-lg border border-red-200 gap-2">
+                        <div>
+                            <div class="font-bold text-gray-900">${item.title}</div>
+                            <div class="text-xs text-gray-600">Параметри: ${item.options}</div>
+                        </div>
+                        <div class="flex items-center justify-between sm:justify-end space-x-3">
+                            <div class="flex items-center border rounded-lg overflow-hidden bg-gray-50">
+                                <button type="button" onclick="changeQty(${idx}, -1)" class="px-2.5 py-1 font-bold hover:bg-gray-200">-</button>
+                                <span class="px-3 py-1 font-bold text-sm bg-white">${item.qty} шт.</span>
+                                <button type="button" onclick="changeQty(${idx}, 1)" class="px-2.5 py-1 font-bold hover:bg-gray-200">+</button>
+                            </div>
+                            <div class="font-bold text-red-600 w-20 text-right">${sum} грн</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            totalEl.innerText = total;
+            headerCount.innerText = count;
         }
 
         document.getElementById('tgForm').addEventListener('submit', async function(e) {
             e.preventDefault();
+            if (cart.length === 0) {
+                alert("Будь ласка, оберіть хоча б один кондуктор перед відправкою замовлення!");
+                return;
+            }
+
             const btn = document.getElementById('submitBtn');
             const status = document.getElementById('statusMessage');
             
-            const qty = parseInt(document.getElementById('qty').value) || 1;
-            const total = qty * PRICE;
+            let totalSum = 0;
+            const itemsText = cart.map((item, i) => {
+                const sum = item.price * item.qty;
+                totalSum += sum;
+                return `${i + 1}. *${item.title}*\n   ⚙️ ${item.options}\n   🔢 ${item.qty} шт. × ${item.price} грн = *${sum} грн*`;
+            }).join('\n\n');
 
             const text = `📦 *НОВЕ ЗАМОВЛЕННЯ З САЙТУ!*\n\n` +
-                `🛠 *Товар:* Кондуктор "Універсальний"\n` +
-                `📏 *Товщина ДСП:* ${document.getElementById('dsp').value}\n` +
-                `⚙️ *Комплектація:* ${document.getElementById('bearings').value}\n` +
-                `🔢 *Кількість:* ${qty} шт.\n` +
-                `💰 *Сума:* ${total} грн\n\n` +
+                `🛒 *Товари:*\n${itemsText}\n\n` +
+                `💰 *ЗАГАЛЬНА СУМА:* ${totalSum} грн\n` +
+                `──────────────────\n` +
                 `👤 *Клієнт:* ${document.getElementById('name').value}\n` +
                 `📞 *Телефон:* ${document.getElementById('phone').value}\n` +
                 `🚚 *Доставка:* ${document.getElementById('delivery').value}\n` +
@@ -231,18 +365,19 @@
 
                 if (response.ok) {
                     status.className = "p-4 rounded-xl text-center font-medium text-sm bg-green-100 text-green-800 block";
-                    status.innerText = "🎉 Дякуємо! Ваше замовлення успішно прийнято. Ми зв'яжемося з вами найближчим часом або відправимо ТТН.";
+                    status.innerText = "🎉 Дякуємо! Ваше замовлення успішно прийнято.";
                     document.getElementById('tgForm').reset();
-                    updateTotal();
+                    cart = [];
+                    renderCart();
                 } else {
                     throw new Error('Помилка відправки');
                 }
             } catch (error) {
                 status.className = "p-4 rounded-xl text-center font-medium text-sm bg-red-100 text-red-800 block";
-                status.innerText = "⚠️ Помилка при відправці. Перевірте підключення або напишіть нам напряму.";
+                status.innerText = "⚠️ Помилка при відправці. Перевірте підключення.";
             } finally {
                 btn.disabled = false;
-                btn.innerText = "✅ Підтвердити замовлення";
+                btn.innerText = "✅ Підтвердити та відправити замовлення";
             }
         });
     </script>
